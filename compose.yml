@@ -1,6 +1,7 @@
 services:
  proxy:
    image: traefik
+      
    container_name: traefik
    restart: unless-stopped
    networks:
@@ -38,9 +39,9 @@ services:
    environment:
      - DUCKDNS_TOKEN=${DUCKDNS_TOKEN}
  client:
-   image: redasaci/final-dock:v3
+   image: redasaci/final-dock:v4
    build:
-     context: ./fullstack
+     context: ./projet
    networks:
      - cloud
    labels:
